@@ -5,6 +5,9 @@ ENV ORMASTER_PASSWORD=ormaster
 
 # Reference to http://www.orca.med.or.jp/receipt/download/trusty/trusty_install_48.html.
 RUN set -xe \
+# wgetをインストール
+  && RUN apt-get update && apt-get install -y wget \
+  && mkdir /tmp \
   && cd /tmp \
   && apt-get install -y wget syslinux-common \
   && wget -q https://ftp.orca.med.or.jp/pub/ubuntu/archive.key \
