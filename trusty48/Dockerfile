@@ -8,7 +8,7 @@ ENV ORMASTER_PASSWORD=ormaster
 RUN set -xe \
 # wgetをインストール
 　&& apt-get install -y wget \
-  && RUN apt-get update
+  && RUN apt-get update \
   #&& mkdir /tmp \
   #&& cd /tmp \
   && apt-get install -y wget syslinux-common \
