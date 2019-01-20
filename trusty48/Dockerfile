@@ -9,8 +9,8 @@ RUN set -xe \
 # wgetをインストール
 　&& apt-get install -y wget \
   && RUN apt-get update
-  && mkdir /tmp \
-  && cd /tmp \
+  #&& mkdir /tmp \
+  #&& cd /tmp \
   && apt-get install -y wget syslinux-common \
   && wget -q https://ftp.orca.med.or.jp/pub/ubuntu/archive.key \
   && apt-key add archive.key \
