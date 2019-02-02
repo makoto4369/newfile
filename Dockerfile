@@ -22,4 +22,4 @@ RUN set -xe \
   && rm -rf /tmp/* /var/lib/apt/lists/*
 
 EXPOSE 8000
-CMD service postgresql restart && service jma-receipt start && tail -f /dev/null
+#CMD service postgresql restart && service jma-receipt start && tail -f /dev/null
