@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER yamamuteki <yama@muteki.com>
+MAINTAINER makoto4369
 
 ENV ORMASTER_PASSWORD=ormaster
 
