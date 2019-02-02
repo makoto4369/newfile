@@ -6,7 +6,8 @@ ENV ORMASTER_PASSWORD=ormaster
 # Reference to http://www.orca.med.or.jp/receipt/download/trusty/trusty_install_48.html.
 RUN set -xe \
   #&& cd /tmp \
-  && apt-get install -y wget syslinux-common \
+  && apt-get update && apt-get install -y wget \
+  #&& apt-get install -y wget syslinux-common \
   && wget -q https://ftp.orca.med.or.jp/pub/ubuntu/archive.key \
   && apt-key add archive.key \
   && wget -q -O /etc/apt/sources.list.d/jma-receipt-trusty48.list https://ftp.orca.med.or.jp/pub/ubuntu/jma-receipt-trusty48.list \
@@ -22,4 +23,4 @@ RUN set -xe \
   && rm -rf /tmp/* /var/lib/apt/lists/*
 
 EXPOSE 8000
-#CMD service postgresql restart && service jma-receipt start && tail -f /dev/null
+CMD service postgresql restart && service jma-receipt start && tail -f /dev/null
